@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DECC23191A3A757D00E08120 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = DECC23181A3A757D00E08120 /* README.md */; };
 		DED8FE061A3A73AA00FB8908 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DED8FE051A3A73AA00FB8908 /* main.m */; };
 		DED8FE091A3A73AA00FB8908 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DED8FE081A3A73AA00FB8908 /* AppDelegate.m */; };
 		DED8FE0C1A3A73AA00FB8908 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED8FE0B1A3A73AA00FB8908 /* ViewController.m */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DECC23181A3A757D00E08120 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DED8FE001A3A73AA00FB8908 /* TwitterInstant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterInstant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED8FE041A3A73AA00FB8908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DED8FE051A3A73AA00FB8908 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		DED8FDF71A3A73AA00FB8908 = {
 			isa = PBXGroup;
 			children = (
+				DECC23181A3A757D00E08120 /* README.md */,
 				DED8FE021A3A73AA00FB8908 /* TwitterInstant */,
 				DED8FE1C1A3A73AA00FB8908 /* TwitterInstantTests */,
 				DED8FE011A3A73AA00FB8908 /* Products */,
@@ -221,6 +224,7 @@
 			files = (
 				DED8FE0C1A3A73AA00FB8908 /* ViewController.m in Sources */,
 				DED8FE091A3A73AA00FB8908 /* AppDelegate.m in Sources */,
+				DECC23191A3A757D00E08120 /* README.md in Sources */,
 				DED8FE061A3A73AA00FB8908 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +416,7 @@
 				DED8FE251A3A73AA00FB8908 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DED8FE261A3A73AA00FB8908 /* Build configuration list for PBXNativeTarget "TwitterInstantTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +425,7 @@
 				DED8FE281A3A73AA00FB8908 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
