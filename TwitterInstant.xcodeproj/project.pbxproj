@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		DB890423E908AC7442F9913D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0399DB7DBD480935BD411FBF /* libPods.a */; };
+		DE7E50AF1A3A90CF0062F68A /* RWSearchFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7E50A81A3A90CF0062F68A /* RWSearchFormViewController.m */; };
+		DE7E50B01A3A90CF0062F68A /* RWSearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7E50AA1A3A90CF0062F68A /* RWSearchResultsViewController.m */; };
+		DE7E50B11A3A90CF0062F68A /* RWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7E50AC1A3A90CF0062F68A /* RWTableViewCell.m */; };
+		DE7E50B21A3A90CF0062F68A /* RWTweet.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7E50AE1A3A90CF0062F68A /* RWTweet.m */; };
+		DE7E50B41A3A90ED0062F68A /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE7E50B31A3A90ED0062F68A /* background.jpg */; };
 		DED8FE061A3A73AA00FB8908 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DED8FE051A3A73AA00FB8908 /* main.m */; };
 		DED8FE091A3A73AA00FB8908 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DED8FE081A3A73AA00FB8908 /* AppDelegate.m */; };
 		DED8FE0C1A3A73AA00FB8908 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DED8FE0B1A3A73AA00FB8908 /* ViewController.m */; };
@@ -31,6 +36,15 @@
 		0399DB7DBD480935BD411FBF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2847F35CF6A59B1348B62ED8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		69937C01DE5D5162DD17173A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DE7E50A71A3A90CF0062F68A /* RWSearchFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSearchFormViewController.h; sourceTree = "<group>"; };
+		DE7E50A81A3A90CF0062F68A /* RWSearchFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSearchFormViewController.m; sourceTree = "<group>"; };
+		DE7E50A91A3A90CF0062F68A /* RWSearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSearchResultsViewController.h; sourceTree = "<group>"; };
+		DE7E50AA1A3A90CF0062F68A /* RWSearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSearchResultsViewController.m; sourceTree = "<group>"; };
+		DE7E50AB1A3A90CF0062F68A /* RWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTableViewCell.h; sourceTree = "<group>"; };
+		DE7E50AC1A3A90CF0062F68A /* RWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTableViewCell.m; sourceTree = "<group>"; };
+		DE7E50AD1A3A90CF0062F68A /* RWTweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTweet.h; sourceTree = "<group>"; };
+		DE7E50AE1A3A90CF0062F68A /* RWTweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTweet.m; sourceTree = "<group>"; };
+		DE7E50B31A3A90ED0062F68A /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		DECC23181A3A757D00E08120 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DED8FE001A3A73AA00FB8908 /* TwitterInstant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterInstant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED8FE041A3A73AA00FB8908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,8 +113,17 @@
 		DED8FE021A3A73AA00FB8908 /* TwitterInstant */ = {
 			isa = PBXGroup;
 			children = (
+				DE7E50B31A3A90ED0062F68A /* background.jpg */,
 				DED8FE071A3A73AA00FB8908 /* AppDelegate.h */,
 				DED8FE081A3A73AA00FB8908 /* AppDelegate.m */,
+				DE7E50A71A3A90CF0062F68A /* RWSearchFormViewController.h */,
+				DE7E50A81A3A90CF0062F68A /* RWSearchFormViewController.m */,
+				DE7E50A91A3A90CF0062F68A /* RWSearchResultsViewController.h */,
+				DE7E50AA1A3A90CF0062F68A /* RWSearchResultsViewController.m */,
+				DE7E50AB1A3A90CF0062F68A /* RWTableViewCell.h */,
+				DE7E50AC1A3A90CF0062F68A /* RWTableViewCell.m */,
+				DE7E50AD1A3A90CF0062F68A /* RWTweet.h */,
+				DE7E50AE1A3A90CF0062F68A /* RWTweet.m */,
 				DED8FE0A1A3A73AA00FB8908 /* ViewController.h */,
 				DED8FE0B1A3A73AA00FB8908 /* ViewController.m */,
 				DED8FE0D1A3A73AA00FB8908 /* Main.storyboard */,
@@ -228,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DED8FE0F1A3A73AA00FB8908 /* Main.storyboard in Resources */,
+				DE7E50B41A3A90ED0062F68A /* background.jpg in Resources */,
 				DED8FE141A3A73AA00FB8908 /* LaunchScreen.xib in Resources */,
 				DED8FE111A3A73AA00FB8908 /* Images.xcassets in Resources */,
 			);
@@ -281,7 +305,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DED8FE0C1A3A73AA00FB8908 /* ViewController.m in Sources */,
+				DE7E50AF1A3A90CF0062F68A /* RWSearchFormViewController.m in Sources */,
 				DED8FE091A3A73AA00FB8908 /* AppDelegate.m in Sources */,
+				DE7E50B21A3A90CF0062F68A /* RWTweet.m in Sources */,
+				DE7E50B01A3A90CF0062F68A /* RWSearchResultsViewController.m in Sources */,
+				DE7E50B11A3A90CF0062F68A /* RWTableViewCell.m in Sources */,
 				DED8FE061A3A73AA00FB8908 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
