@@ -29,6 +29,8 @@
     
     self.resultsViewController = self.splitViewController.viewControllers[1];
 
+    // Use weak reference to avoid potential retain cycle
+    __weak RWSearchFormViewController *bself = self;
     // map isValid to a color
     // apply color to searchText background
     [[self.searchText.rac_textSignal
@@ -37,7 +39,7 @@
           [UIColor whiteColor] : [UIColor yellowColor];
       }]
      subscribeNext:^(UIColor *color) {
-         self.searchText.backgroundColor = color;
+         bself.searchText.backgroundColor = color;
      }];
 
 }
