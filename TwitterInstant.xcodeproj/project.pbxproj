@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DB890423E908AC7442F9913D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0399DB7DBD480935BD411FBF /* libPods.a */; };
+		DE516CEB1A3AB9B3006604E0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE516CEA1A3AB9B3006604E0 /* Social.framework */; };
+		DE516CED1A3AB9C3006604E0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE516CEC1A3AB9C3006604E0 /* Accounts.framework */; };
 		DE7E50AF1A3A90CF0062F68A /* RWSearchFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7E50A81A3A90CF0062F68A /* RWSearchFormViewController.m */; };
 		DE7E50B01A3A90CF0062F68A /* RWSearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7E50AA1A3A90CF0062F68A /* RWSearchResultsViewController.m */; };
 		DE7E50B11A3A90CF0062F68A /* RWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7E50AC1A3A90CF0062F68A /* RWTableViewCell.m */; };
@@ -35,6 +37,8 @@
 		0399DB7DBD480935BD411FBF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2847F35CF6A59B1348B62ED8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		69937C01DE5D5162DD17173A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DE516CEA1A3AB9B3006604E0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		DE516CEC1A3AB9C3006604E0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		DE7E50A71A3A90CF0062F68A /* RWSearchFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSearchFormViewController.h; sourceTree = "<group>"; };
 		DE7E50A81A3A90CF0062F68A /* RWSearchFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSearchFormViewController.m; sourceTree = "<group>"; };
 		DE7E50A91A3A90CF0062F68A /* RWSearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSearchResultsViewController.h; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE516CED1A3AB9C3006604E0 /* Accounts.framework in Frameworks */,
+				DE516CEB1A3AB9B3006604E0 /* Social.framework in Frameworks */,
 				DB890423E908AC7442F9913D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +164,8 @@
 		F3D335AA99B947569C2616F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE516CEC1A3AB9C3006604E0 /* Accounts.framework */,
+				DE516CEA1A3AB9B3006604E0 /* Social.framework */,
 				0399DB7DBD480935BD411FBF /* libPods.a */,
 			);
 			name = Frameworks;
