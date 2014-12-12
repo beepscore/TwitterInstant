@@ -33,17 +33,31 @@
     // Use weak reference to avoid potential retain cycle
     // map isValid to a color
     // apply color to searchText background
-    @weakify(self)
-    [[self.searchText.rac_textSignal
-      map:^id(NSString *text) {
-          return [self isValidSearchText:text] ?
-          [UIColor whiteColor] : [UIColor yellowColor];
-      }]
-     subscribeNext:^(UIColor *color) {
-         @strongify(self)
-         self.searchText.backgroundColor = color;
-     }];
 
+//    Alternative solution- use map and subscribeNext
+//    @weakify(self)
+//    [[self.searchText.rac_textSignal
+//      map:^id(NSString *text) {
+//          return [self isValidSearchText:text] ?
+//          [UIColor whiteColor] : [UIColor yellowColor];
+//      }]
+//     subscribeNext:^(UIColor *color) {
+//         @strongify(self)
+//         self.searchText.backgroundColor = color;
+//     }];
+
+    // create signal by mapping text to boxed boolean
+    RACSignal *validSearchTextSignal = [self.searchText.rac_textSignal
+                                        map:^id(NSString *text) {
+                                            return @([self isValidSearchText:text]);
+                                        }];
+
+    // Use RAC macro to map validSearchTextSignal to searchText property backgroundColor
+    RAC(self.searchText, backgroundColor) =
+    [validSearchTextSignal
+     map:^id(NSNumber *searchTextValid) {
+         return [searchTextValid boolValue] ? [UIColor whiteColor] : [UIColor yellowColor];
+     }];
 }
 
 - (BOOL)isValidSearchText:(NSString *)text {
