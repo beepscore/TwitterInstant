@@ -8,6 +8,7 @@
 
 #import "RWSearchFormViewController.h"
 #import "RWSearchResultsViewController.h"
+#import <ReactiveCocoa.h>
 
 @interface RWSearchFormViewController ()
 
@@ -19,16 +20,30 @@
 
 @implementation RWSearchFormViewController
 
-- (void)viewDidLoad
-{
-  [super viewDidLoad];
-  
-  self.title = @"Twitter Instant";
-  
-  [self styleTextField:self.searchText];
-  
-  self.resultsViewController = self.splitViewController.viewControllers[1];
-  
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.title = @"Twitter Instant";
+    
+    [self styleTextField:self.searchText];
+    
+    self.resultsViewController = self.splitViewController.viewControllers[1];
+
+    // map isValid to a color
+    // apply color to searchText background
+    [[self.searchText.rac_textSignal
+      map:^id(NSString *text) {
+          return [self isValidSearchText:text] ?
+          [UIColor whiteColor] : [UIColor yellowColor];
+      }]
+     subscribeNext:^(UIColor *color) {
+         self.searchText.backgroundColor = color;
+     }];
+
+}
+
+- (BOOL)isValidSearchText:(NSString *)text {
+    return text.length > 2;
 }
 
 - (void)styleTextField:(UITextField *)textField {
