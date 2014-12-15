@@ -1,4 +1,5 @@
 PODS:
+  - LinqToObjectiveC (1.1.0)
   - ReactiveCocoa (2.1.7):
     - ReactiveCocoa/Core (= 2.1.7)
     - ReactiveCocoa/no-arc (= 2.1.7)
@@ -7,9 +8,11 @@ PODS:
   - ReactiveCocoa/no-arc (2.1.7)
 
 DEPENDENCIES:
+  - LinqToObjectiveC (= 1.1.0)
   - ReactiveCocoa (= 2.1.7)
 
 SPEC CHECKSUMS:
+  LinqToObjectiveC: 03de903442520cf2fd1878bae176e85f0b381414
   ReactiveCocoa: 1117f7968c8667d2ca00b5aa47156fabcb56af75
 
 COCOAPODS: 0.35.0
