@@ -77,7 +77,7 @@ static NSString *const RWTwitterInstantDomain = @"TwitterInstant";
                                accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
 
     @weakify(self)
-    [[[[self requestAccessToTwitterSignal]
+    [[[[[self requestAccessToTwitterSignal]
        then:^RACSignal *{
            @strongify(self)
            return self.searchText.rac_textSignal;
@@ -85,6 +85,10 @@ static NSString *const RWTwitterInstantDomain = @"TwitterInstant";
       filter:^BOOL(NSString *text) {
           @strongify(self)
           return [self isValidSearchText:text];
+      }]
+      flattenMap:^RACStream *(NSString *text) {
+          @strongify(self)
+          return [self signalForSearchWithText:text];
       }]
      subscribeNext:^(id x) {
          NSLog(@"%@", x);
