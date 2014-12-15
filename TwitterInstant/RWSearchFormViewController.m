@@ -141,4 +141,54 @@ static NSString *const RWTwitterInstantDomain = @"TwitterInstant";
     return request;
 }
 
+- (RACSignal *)signalForSearchWithText:(NSString *)text {
+    
+    // define the errors
+    NSError *noAccountsError = [NSError errorWithDomain:RWTwitterInstantDomain
+                                                   code:RWTwitterInstantErrorNoTwitterAccounts
+                                               userInfo:nil];
+    
+    NSError *invalidResponseError = [NSError errorWithDomain:RWTwitterInstantDomain
+                                                        code:RWTwitterInstantErrorInvalidResponse
+                                                    userInfo:nil];
+    
+    // create the signal block
+    @weakify(self)
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        @strongify(self);
+        
+        // create the request
+        SLRequest *request = [self requestforTwitterSearchWithText:text];
+        
+        // supply a twitter account
+        NSArray *twitterAccounts = [self.accountStore
+                                    accountsWithAccountType:self.twitterAccountType];
+        if (twitterAccounts.count == 0) {
+            [subscriber sendError:noAccountsError];
+        } else {
+            [request setAccount:[twitterAccounts lastObject]];
+            
+            [request performRequestWithHandler: ^(NSData *responseData,
+                                                  NSHTTPURLResponse *urlResponse, NSError *error) {
+
+                if (urlResponse.statusCode == 200) {
+                    // success, parse the response
+                    NSDictionary *timelineData =
+                    [NSJSONSerialization JSONObjectWithData:responseData
+                                                    options:NSJSONReadingAllowFragments
+                                                      error:nil];
+                    [subscriber sendNext:timelineData];
+                    [subscriber sendCompleted];
+                }
+                else {
+                    // failure, send an error
+                    [subscriber sendError:invalidResponseError];
+                }
+            }];
+        }
+        
+        return nil;
+    }];
+}
+
 @end
