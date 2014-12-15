@@ -130,4 +130,15 @@ static NSString *const RWTwitterInstantDomain = @"TwitterInstant";
     }];
 }
 
+- (SLRequest *)requestforTwitterSearchWithText:(NSString *)text {
+    NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/search/tweets.json"];
+    NSDictionary *params = @{@"q" : text};
+    
+    SLRequest *request =  [SLRequest requestForServiceType:SLServiceTypeTwitter
+                                             requestMethod:SLRequestMethodGET
+                                                       URL:url
+                                                parameters:params];
+    return request;
+}
+
 @end
