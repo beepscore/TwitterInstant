@@ -12,6 +12,8 @@
 #import "RACEXTScope.h"
 @import Accounts;
 @import Social;
+#import "RWTweet.h"
+#import "NSArray+LinqExtensions.h"
 
 typedef NS_ENUM(NSInteger, RWTwitterInstantError) {
     RWTwitterInstantErrorAccessDenied,
@@ -90,10 +92,15 @@ static NSString *const RWTwitterInstantDomain = @"TwitterInstant";
            @strongify(self)
            return [self signalForSearchWithText:text];
        }]
-      // change from background thread to main thread
       deliverOn:[RACScheduler mainThreadScheduler]]
-     subscribeNext:^(id x) {
-         NSLog(@"%@", x);
+     subscribeNext:^(NSDictionary *jsonSearchResult) {
+         NSArray *statuses = jsonSearchResult[@"statuses"];
+         // version 2 method name linq_select ~ version 1.1 method name select
+         //NSArray *tweets = [statuses linq_select:^id(id tweet) {
+         NSArray *tweets = [statuses select:^id(id tweet) {
+             return [RWTweet tweetWithStatus:tweet];
+         }];
+         [self.resultsViewController displayTweets:tweets];
      } error:^(NSError *error) {
          NSLog(@"An error occurred: %@", error);
      }];
